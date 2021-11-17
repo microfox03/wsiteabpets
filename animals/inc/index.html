@@ -1,0 +1,33 @@
+<fieldset><legend>Навигация</legend>
+	<table id="tblanm_navi">
+		<tr>
+		<th style="width: 25%;"><div id="m_main">На главную</div></th>
+		<th style="width: 25%;"><div id="m_back">Назад</div></th>
+		</tr>
+	</table>
+</fieldset>
+<script type="text/javascript">
+$(function(){
+	//
+	$( "[id='tblanm_navi']" ).attr({
+		"width": "100%",
+		"align": "center",
+		"valign": "middle",
+		"cellpadding": "15",
+		"cellspacing": "15",
+	});
+	// Навигация //
+	$( "[id^='m']" ).addClass( "b_shadow" ).css({
+		"padding": "7px",
+		"color": "#000000",
+		"border-radius": "7px",
+		"border": "3px groove #0000cc",
+		"background-color": "#0099ff",
+		"width": "100%",
+	});
+	$( "[id='m_main']" ).click( function() {
+		document.location.reload('./');
+//$( "#examination" ).html( 'Loading information from ' + './' + mainpage + '/' );
+	});
+});
+</script>

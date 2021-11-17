@@ -1,0 +1,35 @@
+<fieldset><legend>Уход за животным</legend>
+	<table id="tblanm_care">
+		<tr>
+		<th style="width: 33%;"><div id="cr_c">Кот</div></th>
+		<th><div id="cr_d">Собака</div></th>
+		<th style="width: 33%;"><div id="cr_h">Хомяк</div></th>
+		</tr>
+	</table>
+</fieldset>
+<script type="text/javascript">
+$(function(){
+	//
+	$( "#tblanm_care").attr({
+		"width": "100%",
+		"align": "center",
+		"valign": "middle",
+		"cellpadding": "15",
+		"cellspacing": "15",
+	});
+
+	// Животное //
+	$( "[id^='cr']" ).addClass( "div_button b_shadow" ).css({
+		"background": "#0086ff",
+	});
+	$( "[id^='cr']" ).click( function() {
+		var animal = $( this ).attr( "id" );
+		$( "#dnavi" ).load( "./inc/");
+		$( "#dbody" ).removeClass("txtheader").addClass("info_header").load( './care/' + animal + '.html' );
+
+//$( "#examination" ).html( 'Loading information from ' + './care/' + animal + '.html' );
+
+	});
+
+});
+</script>
