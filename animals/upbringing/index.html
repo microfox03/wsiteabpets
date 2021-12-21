@@ -1,5 +1,35 @@
 <fieldset><legend>Воспитание животного</legend>
-	<table id="tblanm_care">
-		<tr><th>Кот</th><th>Собака</th><th>Хомяк</th></tr>
+	<table id="tblanm_behave">
+		<tr>
+		<th style="width: 33%;"><div id="bh_c">Кот</div></th>
+		<th><div id="bh_d">Собака</div></th>
+		<th style="width: 33%;"><div id="bh_h">Хомяк</div></th>
+		</tr>
 	</table>
 </fieldset>
+<script type="text/javascript">
+$(function(){
+	//
+	$( "#tblanm_behave").attr({
+		"width": "100%",
+		"align": "center",
+		"valign": "middle",
+		"cellpadding": "15",
+		"cellspacing": "15",
+	});
+
+	// Животное //
+	$( "[id^='bh']" ).addClass( "div_button b_shadow" ).css({
+		"background": "#0086ff",
+	});
+	$( "[id^='bh']" ).click( function() {
+		var animal = $( this ).attr( "id" );
+		$( "#dnavi" ).load( "./inc/");
+		$( "#dbody" ).removeClass("txtheader").addClass("info_header").load( './upbringing/' + animal + '.html' );
+
+//$( "#examination" ).html( 'Loading information from ' + './upbringing/' + animal + '.html' );
+
+	});
+
+});
+</script>

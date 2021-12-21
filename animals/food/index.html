@@ -1,0 +1,35 @@
+<fieldset><legend>Выбор корма для животного</legend>
+	<table id="tblanm_food">
+		<tr>
+		<th style="width: 33%;"><div id="fd_c">Кот</div></th>
+		<th><div id="fd_d">Собака</div></th>
+		<th style="width: 33%;"><div id="fd_h">Хомяк</div></th>
+		</tr>
+	</table>
+</fieldset>
+<script type="text/javascript">
+$(function(){
+	//
+	$( "#tblanm_food").attr({
+		"width": "100%",
+		"align": "center",
+		"valign": "middle",
+		"cellpadding": "15",
+		"cellspacing": "15",
+	});
+
+	// Животное //
+	$( "[id^='fd']" ).addClass( "div_button b_shadow" ).css({
+		"background": "#0086ff",
+	});
+	$( "[id^='fd']" ).click( function() {
+		var animal = $( this ).attr( "id" );
+		$( "#dnavi" ).load( "./inc/");
+		$( "#dbody" ).removeClass("txtheader").addClass("info_header").load( './food/' + animal + '.html' );
+
+//$( "#examination" ).html( 'Loading information from ' + './food/' + animal + '.html' );
+
+	});
+
+});
+</script>
